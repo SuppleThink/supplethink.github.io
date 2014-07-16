@@ -27,6 +27,10 @@ author :
 #
 production_url : http://username.github.io
 
+
+# Set to new markdown interpreter
+markdown: kramdown
+
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #
 JB :
