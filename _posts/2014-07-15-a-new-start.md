@@ -6,3 +6,5 @@ category:
 tags: []
 ---
 {% include JB/setup %}
+
+Welcome to the new Supple Think. I am very happy.
