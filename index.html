@@ -1,0 +1,39 @@
+---
+layout: page
+---
+{% include JB/setup %}
+
+<ul class="posts">
+  {% for post in paginator.posts %}
+    <li>
+    	<span>{{ post.date | date_to_string }}</span> &raquo; <br>
+	<h2><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></h2>
+    	<p>
+   		{{ post.content }} 
+	</p>
+	<br>
+	<span class="clearfix">
+		<i class="fa fa-laptop fa-3x pull-left"></i>
+		<a href="{{ post.url }}" class="pull-left">&raquo; Permalink</a><div class="pull-left">&nbsp;&nbsp;&nbsp;&nbsp;</div>
+		<a href="{{ post.url}}/#comments" class="pull-left">&raquo; View/Post Comments</a>
+	</span>
+	<hr>
+    </li>
+  {% endfor %}
+</ul>
+
+<br>
+
+<div class="pagination">
+	{% if paginator.page == 2 %}
+		<a href="/" class="previous">Previous</a> |
+	{% elsif paginator.previous_page %}
+		<a href="/page{{ paginator.previous_page }}" class="previous">Previous</a> |
+	{% endif %}
+	<span class="page_number ">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+	{% if paginator.next_page %}
+		| <a href="/page{{ paginator.next_page }}" class="next">Next</a>
+	{% endif %}
+</div>
+
+<br>
